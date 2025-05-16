@@ -6,15 +6,11 @@ class MyFilm extends Component {
     films: [],
     isLoading: false,
   };
-  fetchMyFilm = async () => {
+  componentDidMount = async () => {
     this.setState({ isLoading: true });
 
     try {
-      let resp = await fetch(`http://www.omdbapi.com/?apikey=95742065&s=${this.props.cosa}`, {
-        headers: {
-          "Content-Type": "aplication/json",
-        },
-      });
+      let resp = await fetch(`http://www.omdbapi.com/?s=${this.props.film}&apikey=c2ca027b`);
       if (resp.ok) {
         const films = await resp.json();
         this.setState({ films: films.Search });
@@ -33,6 +29,7 @@ class MyFilm extends Component {
       <Container fluid>
         <Container>
           <h3>{this.props.title}</h3>
+          {console.log(this.props.film)}
         </Container>
         <Row>
           {this.state.isLoading && <Spinner animation="border" variant="danger" />}

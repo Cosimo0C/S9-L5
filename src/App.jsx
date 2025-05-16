@@ -8,8 +8,8 @@ function App() {
     <>
       <MyNavbar />
       <Hero />
-      <MyFilm />
-      <MyFooter film="avengers" />
+      <MyFilm film="avengers" />
+      <MyFooter />
     </>
   );
 }
