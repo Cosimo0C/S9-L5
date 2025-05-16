@@ -26,7 +26,7 @@ class MyFilm extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container fluid className="bg-dark">
         <Container>
           <h3>{this.props.title}</h3>
           {console.log(this.props.film)}
@@ -34,7 +34,7 @@ class MyFilm extends Component {
         <Row>
           {this.state.isLoading && <Spinner animation="border" variant="danger" />}
           {this.state.films.slice(0, 6).map((film) => (
-            <Col xs={6} md={3} lg={2} key={film.imdbID}>
+            <Col className="m-0 p-0" xs={6} md={4} lg={2} key={film.imdbID}>
               <Card.Img src={film.Poster} />
             </Col>
           ))}
