@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Container, Row, Col, Spinner, Card } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Card, CardImg } from "react-bootstrap";
 
 class MyFilm extends Component {
   state = {
@@ -26,16 +26,14 @@ class MyFilm extends Component {
 
   render() {
     return (
-      <Container fluid className="bg-dark">
-        <Container>
-          <h3>{this.props.title}</h3>
-          {console.log(this.props.film)}
-        </Container>
+      <Container fluid className="bg-dark d-flex flex-column justify-content-center ms-2">
+        <h3 className=" text-white">{this.props.film}</h3>
+        {console.log("ciao", this)}
         <Row>
           {this.state.isLoading && <Spinner animation="border" variant="danger" />}
           {this.state.films.slice(0, 6).map((film) => (
-            <Col className="m-0 p-0" xs={6} md={4} lg={2} key={film.imdbID}>
-              <Card.Img src={film.Poster} />
+            <Col className="p-0" xs={6} md={4} lg={2} key={film.imdbID}>
+              <Card.Img className="p-2" src={film.Poster} />
             </Col>
           ))}
           <Card.Body></Card.Body>
