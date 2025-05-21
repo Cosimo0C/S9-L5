@@ -28,7 +28,6 @@ class MyFilm extends Component {
     return (
       <Container fluid className="bg-dark d-flex flex-column justify-content-center ms-2">
         <h3 className=" text-white">{this.props.film}</h3>
-        {console.log("ciao", this)}
         <Row>
           {this.state.isLoading && <Spinner animation="border" variant="danger" />}
           {this.state.films.slice(0, 6).map((film) => (
